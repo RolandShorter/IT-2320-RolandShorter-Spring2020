@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shorter_Lab3b</title>
+    <script>
+        var number1 = [];
+        var number2 = [];
+        var result;
+        var user = prompt("How many numbers would in the sequence would you like displayed?");
+
+        if (user < 3) {
+            alert("You must request at least 3 numbers in the sequnce");
+        }
+
+        document.writeln("<h2>Roland_Shorter-IT2320-Lab3</h2>")
+
+        var number1 = 0;
+        for(var i = 0; i < user; i++) {
+            number1[i] = i;
+        }
+
+        var number2 = 1;
+        for(var i = 1; i < user; i++) {
+            number2[i] = 1;
+        }
+
+        for (var i=0; i < user;i++)
+    {
+        result = number1 + number2;
+        number1 = number2;
+        number2 = result;
+
+        document.writeln(result);
+
+    }
+
+ 
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

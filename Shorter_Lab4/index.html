@@ -23,8 +23,16 @@
 			// call the factorial function
 			calcFactorial();
             // calculate the square of the number
-			math.pow(myNum, 2);
+            function square(mynum){
+                var numSq;
+                var numSq =  math.pow(myNum, 2);
+               
+            }
+            return numSq;
+			
             // display those values in the proper place in the HTML 
+            document.getElementById("myNum").value = calcFactorial;
+            document.getElementById("mySquare").value = square;
 		}
 		window.onload = function() {
 		    $("goCalculate").onclick = calculate; 

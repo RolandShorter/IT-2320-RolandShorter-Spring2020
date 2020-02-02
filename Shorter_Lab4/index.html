@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>Shorter =_Lab4</title> 
+	<script>
+		"use strict";
+		var $ = function(id) { 
+		    return document.getElementById(id); 
+		};
+		function calcFactorial(myNum) { 
+			// calculate the factorial and return that value
+			var i;
+			var fact = 1;
+			for ( i = myNum; i >= 1; i--) {
+				fact = fact * i;
+			}
+			return fact;
+
+		}
+		function calculate() { 
+			// get the number entered into the text box myNum
+			var myNum = document.getElementById("myNum").value;
+
+			// call the factorial function
+			calcFactorial();
+            // calculate the square of the number
+			math.pow(myNum, 2);
+            // display those values in the proper place in the HTML 
+		}
+		window.onload = function() {
+		    $("goCalculate").onclick = calculate; 
+			$("myNum").focus();
+		}; 
+	</script>
+</head> 
+<body>
+	<main>
+		<h2>Enter a Number for Calculation</h1> 
+		<label for="myNum">My Number Is:</label>
+		<input type="text" id="myNum"><br>
+		<br/>
+		<!-- display the squre here -->
+		<label for="mySquare">My Number Squared:</label> 
+		<input type="text" id="mySquare" disabled><br> 
+		<br/>
+		<!-- display the factorial here -->
+		<label for="">My Factorial</label> 
+		<input type="text" id="myFactorial" disabled><br> 
+		<br/>
+		<label>&nbsp;</label>
+		<input type="button" id="goCalculate" value="GO"><br> 
+	</main> 
+</body>  
+</html>

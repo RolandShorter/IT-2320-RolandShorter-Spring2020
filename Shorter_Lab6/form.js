@@ -22,31 +22,31 @@ var registerEntries = function() {
     var password = $(passowrd).value;
     var password2 = $(password2).value;
 
-    if (fname == " "){
+    if (fname == ""){
         fname = required;
         header = msg;
     }
-    if (sname == " "){
+    if (sname == ""){
         sname = required;
         header = msg; 
     }
-    if (address1 == " "){
+    if (address1 == ""){
         address1 = required;
         header = msg;
     }
-    if (address2 == " "){
+    if (address2 == ""){
         address2 = required;
         header = msg;
     }
-    if (city == " "){
+    if (city == ""){
         city = required;
         header = required;
     }
-    if (state == " "){
+    if (state == ""){
         state = required;
         header = required;
     }
-    if (zipcode == " "){
+    if (zipcode == ""){
         zipcode = required;
         header = msg;
     }
@@ -54,30 +54,30 @@ var registerEntries = function() {
         gender = required;
         header = msg;
     }
-    if (birth == " "){
+    if (birth == ""){
         birth = required;
         header = msg;
     }
-    if (mstatus == " "){
+    if (mstatus == ""){
         mstatus = required;
         header = msg;
     }
     if (sname == ){
         
     }
-    if (email == " "){
+    if (email == ""){
         email = required;
         header = msg;
     }
-    if (phone == " "){
+    if (phone == ""){
         phone = required;
         header = msg;
     }
-    if (password == " "){
+    if (password == ""){
        password = required;
        header = msg; 
     }
-    if (password2 == " "){
+    if (password2 == ""){
        password2 = required;
        header = msg; 
     }

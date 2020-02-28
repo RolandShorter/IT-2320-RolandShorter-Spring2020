@@ -10,7 +10,7 @@ var registerEntries = function() {
     var lanme  = $(lname).value; 
     var address1 = $(address1).value;
     var address2 = $(address2).value;
-    var city = $(city).Value;
+    var city = $(city).value;
     var state  = $(state).value;
     var zipcode = $ (zipecode).value;
     var gender  = $(gender).checked;
@@ -82,4 +82,9 @@ var registerEntries = function() {
        header = msg; 
     }
 
+};
+
+var resetForm = funtion() {
+    $("myForm").reset();
+    $(fname)
 }

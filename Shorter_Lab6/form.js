@@ -1,38 +1,66 @@
 "use strict";
 var $ = function (id) { return document.getElementById(id); };
 
+ window.onload = function() {
+      //$("reset_form").onclick = resetForm;
+      $("mstatus").onchange = mstatusChange;
+      $("fname").focus();
+  };
+  
+  function mstatusChange() {
+     var mstatus = $('mstatus').value;
+	 if (mstatus=="Married") {
+	    $('sname').disabled = false;
+	 } else {
+	 	 $('sname').disabled = true;
+	 }
+  }
+
+
 var registerEntries = function() {
-    var header = "";
-    var html = "";
-    var required - "<span> Required field</span>";
+    //var header = "";
+    //var html = "";
+    //var required - "<span> Required field</span>";
     var msg = "Pleae fill in all required fields";
-    var fname =$ (fname).value;
-    var lanme  = $(lname).value; 
-    var address1 = $(address1).value;
-    var address2 = $(address2).value;
-    var city = $(city).value;
-    var state  = $(state).value;
-    var zipcode = $ (zipecode).value;
-    var gender  = $(gender).checked;
-    var birth = $(birth).value;
-    var mstatus = $(mstatus).value;
-    var sname  = $(sname).value;
-    var email = $(email).value;
-    var phone = $(phone).value;
-    var password = $(passowrd).value;
-    var password2 = $(password2).value;
+    var fname =$('fname').value;
+    var lname  = $('lname').value; 
+    var address1 = $('address1').value;
+    var address2 = $('address2').value;
+    var city = $('city').Value;
+    var state  = $('state').value;
+    var zipcode = $ ('zipcode').value;
+    var gender  = $('gender').checked;
+    var dob = $('dob').value;
+    var mstatus = $('mstatus').value;
+    var sname  = $('sname').value;
+    var email = $('email').value;
+    var phone = $('phone').value;
+    var password = $('password').value;
+    var password2 = $('password2').value;
+	
+	var formGood = true;
 
     if (fname == ""){
-        fname = required;
-        header = msg;
-    }
-    if (sname == ""){
-        sname = required;
-        header = msg; 
-    }
+	    formGood = false;
+        $('fnameLabel').className = "redtext";
+    } else {
+	    $('fnameLabel').className = "blacktext";
+	}
+	
+    if (lname == ""){
+		formGood = false;
+        $('lnameLabel').className = "redtext";
+    } else {
+	    $('lnameLabel').className = "blacktext";
+	}
+	
     if (address1 == ""){
-        address1 = required;
-        header = msg;
+        formGood = false;
+        $('address1Label').className = "redtext";
+    } else {
+	    $('address1Label').className = "blacktext";
+	}
+ 
     }
     if (address2 == ""){
         address2 = required;

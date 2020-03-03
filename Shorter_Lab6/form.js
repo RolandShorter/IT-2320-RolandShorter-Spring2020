@@ -2,7 +2,7 @@
 var $ = function (id) { return document.getElementById(id); };
 
  window.onload = function() {
-      //$("reset_form").onclick = resetForm;
+      $("reset_form").onclick = resetForm;
       $("mstatus").onchange = mstatusChange;
       $("fname").focus();
   };
@@ -60,59 +60,91 @@ var registerEntries = function() {
     } else {
 	    $('address1Label').className = "blacktext";
 	}
- 
-    }
+    
     if (address2 == ""){
-        address2 = required;
-        header = msg;
-    }
+        formGood = false;
+        $('address2Label').className = "redtext";
+    } else {
+	    $('address2Label').className = "blacktext";
+	}
     if (city == ""){
-        city = required;
-        header = required;
-    }
+        formGood = false;
+        $('citylabel').className = "redtext";
+    } else {
+	    $('citylabel').className = "blacktext";
+	}
     if (state == ""){
-        state = required;
-        header = required;
-    }
+        formGood = false;
+        $('statelabel').className = "redtext";
+    } else {
+	    $('statelabel').className = "blacktext";
+	}
     if (zipcode == ""){
-        zipcode = required;
-        header = msg;
-    }
-    if (gender == false){
-        gender = required;
-        header = msg;
-    }
-    if (birth == ""){
-        birth = required;
-        header = msg;
-    }
-    if (mstatus == ""){
-        mstatus = required;
-        header = msg;
-    }
-    if (sname == ){
+        formGood = false;
+        $('zipcodelabel').className = "redtext";
+    } else {
+        $('zipcodelabel').className = "blacktext";
         
-    }
+	}if (gender == ""){
+        formGood = false;
+        $('genderlabel').className = "redtext";
+    } else {
+	    $('genderlabel').className = "blacktext";
+	}
+    if (dob == ""){
+        formGood = false;
+        $('doblabel').className = "redtext";
+    } else {
+	    $('doblabel').className = "blacktext";
+	}
+     if (mstatus == ""){
+        formGood = false;
+        $('mstatuslabel').className = "redtext";
+    } else {
+	    $('mstatuslabel').className = "blacktext";
+	}
+    if (sname == ""){
+        formGood = false;
+        $('snamelabel').className = "redtext";
+    } else {
+	    $('snamelabel').className = "blacktext";
+	}
     if (email == ""){
-        email = required;
-        header = msg;
-    }
+        formGood = false;
+        $('emaillabel').className = "redtext";
+    } else {
+	    $('emaillabel').className = "blacktext";
+	}
     if (phone == ""){
-        phone = required;
-        header = msg;
-    }
+        formGood = false;
+        $('phonelabel').className = "redtext";
+    } else {
+	    $('phonelabel').className = "blacktext";
+	}
     if (password == ""){
-       password = required;
-       header = msg; 
+        formGood = false;
+        $('passwordlabel').className = "redtext";
+    } else {
+	    $('passwordlabel').className = "blacktext";
     }
     if (password2 == ""){
-       password2 = required;
-       header = msg; 
+        formGood = false;
+        $('password2label').className = "redtext";
+    } else {
+	    $('password2label').className = "blacktext";
+    }
+    if (formGood) {
+        $('myForm').submit();
+        $('errorMsg').innerHTML = "";
+    } else {
+        $('errorMsg').innerHTML = msg;
     }
 
-};
+    var resetForm = function() {
+        $("myform").reset();
+      //  $("fname").firstChild.nodeValue = "";
+       
 
-var resetForm = funtion() {
-    $("myForm").reset();
-    $(fname)
+
+    };
 }

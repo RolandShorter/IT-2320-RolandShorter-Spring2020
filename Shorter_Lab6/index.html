@@ -10,30 +10,30 @@
 <body>
     <main>
         <h1>Registration Form</h1>
-        <form action=http://www.waynedog.net/formreader.php” method="post"
-        name ="myForm" id="myForm"> 
-            <label for="fname">First Name</label><br>
+		<h2 id="errorMsg" class="redtext"> </h2>
+        <form action="http://www.waynedog.net/formreader.php" method="post" id="myForm">
+            <label for="fname" id="fnameLabel">First Name</label><br>
                 <input type="text" name="fname" id="fname">
                 <br>
 
-                <label for="lname">Last Name</label><br>
+                <label for="lname" id="lnameLabel">Last Name</label><br>
                 <input type="text" name="lname" id="lname">
                 <br>
 
-                <label for="address1">Address</label><br>
+                <label for="address1" id="address1Label">Address</label><br>
                 <input type="text" name="address1" id="address1">
                 <br>
 
-                <label for="address2">Suite or Apt</label><br>
+                <label for="address2" id="address2Label">Suite or Apt</label><br>
                 <input type="text" name="address2" id="address2">
                 <br>
 
-                <label for="city">City</label><br>
+                <label for="city" id="citylabel">City</label><br>
                 <input type="text" name="city" id="city">
                 <br>
 
-                <label for="state">State</label><br>
-                <select name="state" id="state">
+                <label for="state" id="statelabel">State</label><br>
+                <select name="state" id="state" name="state">
                 <option value="">Select a State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -89,56 +89,54 @@
                 </select><br>
                 
 
-                <label for="zipcode">Zip Code</label><br>
+                <label for="zipcode" id="zipcodelabel">Zip Code</label><br>
                 <input type="text" name="zipcode" id="zipcode">
                 <br><br>
 
-                <label for="gender">Gender</label><br>
-                <input type="radio" name="gender" id="gender">
+                <label for="gender" id="genderlabel">Gender</label><br>
+                <input type="radio" name="gender" id="gender" value="M"> Male<br/>
+				<input type="radio" name="gender" id="gender" value="F"> Female
                 <br>
 
-                <label for="dob">Birthdate</label><br>
+                <label for="dob" id="doblabel">Birthdate</label><br>
                 <input type="date" name="dob" id="dob">
                 <br>
 
-                <label for="mstatus">Marital Status</label><br>
+                <label for="mstatus" id="mstatuslabel">Marital Status</label><br>
                 <select name="mstatus" id="mstatus">
-                    <option value="">Select</option>
-                    <option value="Married">Married</option>
-                    <option value="Single">Single</option>
-                </select>
+				   <option value=""> </option>
+				   <option value="Single">Single</option>
+				   <option value="Married">Married</option>
+				</select>
                 <br>
 
-                <label for="sname">Spouse Name</label><br>
+                <label for="sname" id="snamelabel">Spouse Name</label><br>
                 <input type="text" name="sname" id="sname">
                 <br>
 
-                <label for="email">Email</label><br>
+                <label for="email" id="emaillabel">Email</label><br>
                 <input type="text" name="email" id="email">
                 <br>
 
-                <label for="phone">Phone</label><br>
+                <label for="phone" id="phonelabel">Phone</label><br>
                 <input type="text" name="phone" id="phone">
                 <br>
 
-                <label for="password">Password</label><br>
-                <input type="text" name="password" id="password">
+                <label for="password" id="passwordlabel">Password</label><br>
+                <input type="password" name="password" id="password">
                 <br>
 
-                <label for="password2">Conirm Password</label><br>
-                <input type="password" name="passwrod2" id="password2">
+                <label for="password2" id="password2label">Conirm Password</label><br>
+                <input type="password" name="password2" id="password2">
                 <br>
 
                 <label for="reset">RESET</label><br>
-                <input type="button" name="reset" id="reset">
+                <input type="button" name="resetBtn" id="resetBtn" onclick="reset()">
                 <br>
 
                 <label for="submit">SUBMIT</label><br>
-                <input type="button" name="submit" id="submit">
+                <input type="button" name="submitBtn" id="submitBtn" onclick="registerEntries()">
      </form>      
-
-
     </main>
-    
 </body>
 </html>

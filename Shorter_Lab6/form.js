@@ -2,7 +2,7 @@
 var $ = function (id) { return document.getElementById(id); };
 
  window.onload = function() {
-      $("reset_form").onclick = resetForm;
+      //$("reset_form").onclick = resetForm;
       $("mstatus").onchange = mstatusChange;
       $("fname").focus();
   };
@@ -140,11 +140,5 @@ var registerEntries = function() {
         $('errorMsg').innerHTML = msg;
     }
 
-    var resetForm = function() {
-        $("myform").reset();
-      //  $("fname").firstChild.nodeValue = "";
-       
-
-
-    };
+    
 }

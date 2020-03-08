@@ -37,8 +37,6 @@ var registerEntries = function() {
     var phone = $('phone').value;
     var password = $('password').value;
     var password2 = $('password2').value;
-   /* var notEqual = $('notEqual').value;
-	trying to validate password */
 	var formGood = true;
 
     if (fname == ""){
@@ -134,10 +132,19 @@ var registerEntries = function() {
     } else {
 	    $('password2label').className = "blacktext";
     }
-   /* if (notEqual{ 
-        password2 != password;
-         ('notEqual').className ="redtext"
-        }*/
+   if (password2 != password){
+       formGood = false;
+       $('password2label').className = "redtext";
+   }else{
+       $('password2label').className = "redtext";
+   }
+   
+   if (password != password2){
+    formGood = false;
+    $('passwordlabel').className = "redtext";
+}else{
+    $('passwordlabel').className = "redtext";
+}
 
     if (formGood) {
         $('myForm').submit();

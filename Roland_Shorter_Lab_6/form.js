@@ -136,14 +136,14 @@ var registerEntries = function() {
        formGood = false;
        $('password2label').className = "redtext";
    }else{
-       $('password2label').className = "redtext";
+       $('password2label').className = "blacktext";
    }
    
    if (password != password2){
     formGood = false;
     $('passwordlabel').className = "redtext";
 }else{
-    $('passwordlabel').className = "redtext";
+    $('passwordlabel').className = "blacktext";
 }
 
     if (formGood) {

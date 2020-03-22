@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shorter_Lab6</title>
+    <link rel="stylesheet" type= "text/css"  href="stylesheet.css">
+    <script>
+    "use strict";
+        var $ = function (id) { return document.getElementById(id); };
+        
+         window.onload = function() {
+              //$("reset_form").onclick = resetForm;
+              $("mstatus").onchange = mstatusChange;
+              $("fname").focus();
+          };
+          
+          function mstatusChange() {
+             var mstatus = $('mstatus').value;
+             if (mstatus=="Married") {
+                $('sname').disabled = false;
+             } else {
+                  $('sname').disabled = true;
+             }
+          }
+        
+        
+        var registerEntries = function() {
+            //var header = "";
+            //var html = "";
+            //var required - "<span> Required field</span>";
+            var msg = "Pleae fill in all required fields";
+            var fname =$('fname').value;
+            var lname  = $('lname').value; 
+            var address1 = $('address1').value;
+            var address2 = $('address2').value;
+            var city = $('city').Value;
+            var state  = $('state').value;
+            var zipcode = $ ('zipcode').value;
+            var gender  = $('gender').checked;
+            var dob = $('dob').value;
+            var mstatus = $('mstatus').value;
+            var sname  = $('sname').value;
+            var email = $('email').value;
+            var phone = $('phone').value;
+            var password = $('password').value;
+            var password2 = $('password2').value;
+            var formGood = true;
+        
+            if (fname == ""){
+                formGood = false;
+                $('fnameLabel').className = "redtext";
+            } else {
+                $('fnameLabel').className = "blacktext";
+            }
+            
+            if (lname == ""){
+                formGood = false;
+                $('lnameLabel').className = "redtext";
+            } else {
+                $('lnameLabel').className = "blacktext";
+            }
+            
+            if (address1 == ""){
+                formGood = false;
+                $('address1Label').className = "redtext";
+            } else {
+                $('address1Label').className = "blacktext";
+            }
+            
+            if (address2 == ""){
+                formGood = false;
+                $('address2Label').className = "redtext";
+            } else {
+                $('address2Label').className = "blacktext";
+            }
+            if (city == ""){
+                formGood = false;
+                $('citylabel').className = "redtext";
+            } else {
+                $('citylabel').className = "blacktext";
+            }
+            if (state == ""){
+                formGood = false;
+                $('statelabel').className = "redtext";
+            } else {
+                $('statelabel').className = "blacktext";
+            }
+            if (zipcode == ""){
+                formGood = false;
+                $('zipcodelabel').className = "redtext";
+            } else {
+                $('zipcodelabel').className = "blacktext";
+                
+            }if (gender == ""){
+                formGood = false;
+                $('genderlabel').className = "redtext";
+            } else {
+                $('genderlabel').className = "blacktext";
+            }
+            if (dob == ""){
+                formGood = false;
+                $('doblabel').className = "redtext";
+            } else {
+                $('doblabel').className = "blacktext";
+            }
+             if (mstatus == ""){
+                formGood = false;
+                $('mstatuslabel').className = "redtext";
+            } else {
+                $('mstatuslabel').className = "blacktext";
+            }
+            if (sname == ""){
+                formGood = false;
+                $('snamelabel').className = "redtext";
+            } else {
+                $('snamelabel').className = "blacktext";
+            }
+            if (email == ""){
+                formGood = false;
+                $('emaillabel').className = "redtext";
+            } else {
+                $('emaillabel').className = "blacktext";
+            }
+            if (phone == ""){
+                formGood = false;
+                $('phonelabel').className = "redtext";
+            } else {
+                $('phonelabel').className = "blacktext";
+            }
+            if (password == ""){
+                formGood = false;
+                $('passwordlabel').className = "redtext";
+            } else {
+                $('passwordlabel').className = "blacktext";
+            }
+            if (password2 == ""){
+                formGood = false;
+                $('password2label').className = "redtext";
+            } else {
+                $('password2label').className = "blacktext";
+            }
+           if (password2 != password){
+               formGood = false;
+               $('password2label').className = "redtext";
+           }else{
+               $('password2label').className = "blacktext";
+           }
+           
+           if (password != password2){
+            formGood = false;
+            $('passwordlabel').className = "redtext";
+        }else{
+            $('passwordlabel').className = "blacktext";
+        }
+        
+            if (formGood) {
+                $('myForm').submit();
+                $('errorMsg').innerHTML = "";
+            } else {
+                $('errorMsg').innerHTML = msg;
+            }
+        
+            
+        }
+        </script>
+
+        <style>
+            body {
+    border: 3px solid black;
+    margin: 0 auto;
+    width: 800px;
+    padding: 5em;
+}
+form {
+    padding-top: 0%;
+}
+label {
+    
+    float: left;
+    width: 100 em;
+    color: black;
+}
+td {
+    width: 9 em;
+}
+
+.blacktext{
+    color: black;
+}
+
+.redtext{
+    color: red;
+}
+
+
+        </style>
+</head>
+<body>
+    <main>
+        <h1>Registration Form</h1>
+		<h2 id="errorMsg" class="redtext"> </h2>
+        <form action="http://www.waynedog.net/formreader.php" method="post" id="myForm">
+            <table>
+                <tr>
+                    
+                <th><label for="fname" id="fnameLabel">First Name</label><br>
+                <input type="text" name="fname" id="fname"></th>
+                <br>
+
+                <th>
+                <label for="lname" id="lnameLabel">Last Name</label><br>
+                <input type="text" name="lname" id="lname"></th>
+                </tr>
+                <br>
+
+                <tr>
+                <th><label for="address1" id="address1Label">Address</label><br>
+                <input type="text" name="address1" id="address1"></th>
+                
+                <br>
+                
+                <th>
+                <label for="address2" id="address2Label">Suite or Apt</label><br>
+                <input type="text" name="address2" id="address2">
+                </th>
+                </tr>
+                <br>
+                <tr>
+                
+                <tr>
+                <th><label for="city" id="citylabel">City</label><br>
+                <input type="text" name="city" id="city"></th>
+                
+                <br>
+
+                <th>
+                <label for="state" id="statelabel">State</label><br>
+                <select name="state" id="state" name="state">
+                <option value="">Select a State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">Dist of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+                </select>
+                </th>
+                </tr>
+                <br>
+                
+                <tr>
+                <th><label for="zipcode" id="zipcodelabel">Zip Code</label><br>
+                <input type="text" name="zipcode" id="zipcode"></th>
+                </tr>
+                <br><br>
+
+                <tr>
+                    <th><label for="gender" id="genderlabel">Gender</label><br>
+                        <input type="radio" name="gender" id="gender" value="M"> Male<br/>
+                        <input type="radio" name="gender" id="gender" value="F"> Female
+                </th>
+                </tr>
+                <br>
+
+                <tr>
+                    <th><label for="dob" id="doblabel">Birthdate</label><br>
+                        <input type="date" name="dob" id="dob"></th>
+                </tr>
+                <br>
+
+               <tr>
+                   <th> <label for="mstatus" id="mstatuslabel">Marital Status</label><br>
+                    <select name="mstatus" id="mstatus">
+                       <option value=""> </option>
+                       <option value="Single">Single</option>
+                       <option value="Married">Married</option>
+                    </select></th>
+               </tr>
+                <br>
+
+                <tr>
+                    <th><label for="sname" id="snamelabel">Spouse Name</label><br>
+                        <input type="text" name="sname" id="sname"></th>
+                </tr>
+                <br>
+
+                <tr>
+                    <th><label for="email" id="emaillabel">Email</label><br>
+                        <input type="text" name="email" id="email"></th>
+                </tr>
+                <br>
+
+               <tr>
+                   <th> <label for="phone" id="phonelabel">Phone</label><br>
+                    <input type="text" name="phone" id="phone"></th>
+               </tr>
+                <br>
+
+               <tr>
+                   <th> <label for="password" id="passwordlabel">Password</label><br>
+                    <input type="password" name="password" id="password"></th>
+               </tr>
+                <br>
+
+                <tr>
+                    <th><label for="password2" id="password2label">Conirm Password</label><br>
+                        <input type="password" name="password2" id="password2"></th>
+                </tr>
+                <br>
+
+                <tr>
+                    <th><label for="reset">RESET</label><br>
+                        <input type="button" name="resetBtn" id="resetBtn" onclick="reset()"></th>
+                </tr>
+                <br>
+
+               <tr>
+                   <th> <label for="submit">SUBMIT</label><br>
+                    <input type="button" name="submitBtn" id="submitBtn" onclick="registerEntries()"></th>
+               </tr>
+     </form>      
+    </main>
+    </table>
+    </body>
+</body>
+</html>

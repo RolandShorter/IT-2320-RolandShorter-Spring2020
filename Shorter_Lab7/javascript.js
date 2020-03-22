@@ -12,10 +12,13 @@ window.onload = function() {
       console.log("changePicture")
   }
   //$("changePicture").addEventListener("click", changePicture, false)
-$("changePicture").onclick = changePicture
+
+$("timerVal").onclick = changePicture
+
 var i, image, listNode, link;
 for  ( i = 0;  i < imageLinks.length; i++) {
   var timeOut = setTimeout(swapPictures, 1000)
+  
 //count down timerCount
 //get value from the input
 //at end of delay swap pictures

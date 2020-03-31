@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>"https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"</script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+
+            var left = 2200;
+$(".img_guy").each(function(){
+
+          $(this).animate({
+            
+              left: left,
+
+              opacity: 1,
+              
+
+          }, 3000);
+
+         
+
+  });
+
+            });
+
+
+ });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <h2>Roland Shorter IT 2320 - Lab 9- Walking Guy Gif</h2>
+    <button>Start</button>
+
+<div id="walking guy">
+    <div class="img_guy"><img src="images/lab9-guy-walking.gif" /></div>
+</div>
+<style>
+    .img_guy{
+
+position: absolute;
+
+width: 400px;
+
+left: 0px;
+
+opacity:0;
+
+top :100;
+    }
+
+.
+</style>
+</body>
+</html>

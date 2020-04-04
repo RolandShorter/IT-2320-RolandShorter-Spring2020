@@ -7,9 +7,13 @@
         $(document).ready(function(){
             $("button").click(function(){
 
-            var left = 2200;
-$(".img_guy").each(function(){
+            var left =2200;
+            
+             $("guy").fadeIn(1000);
+             
 
+$(".img_guy").each(function(){
+          
           $(this).animate({
             
               left: left,
@@ -17,7 +21,7 @@ $(".img_guy").each(function(){
               opacity: 1,
               
 
-          }, 3000);
+          }, 3000, );
 
          
 
@@ -37,7 +41,7 @@ $(".img_guy").each(function(){
     <button>Start</button>
 
 <div id="walking guy">
-    <div class="img_guy"><img src="images/lab9-guy-walking.gif" /></div>
+    <div class="img_guy"><img src="images/lab9-guy-walking.gif" id="guy" /></div>
 </div>
 <style>
     .img_guy{
@@ -53,7 +57,7 @@ opacity:0;
 top :100;
     }
 
-.
+
 </style>
 </body>
 </html>

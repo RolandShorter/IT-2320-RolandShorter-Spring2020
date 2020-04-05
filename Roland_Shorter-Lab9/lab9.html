@@ -7,22 +7,35 @@
         $(document).ready(function(){
             $("button").click(function(){
 
-            var left =2200;
             
-             $("guy").fadeIn(1000);
+            var width = $(window).width();
+            
+           
              
 
 $(".img_guy").each(function(){
-          
-          $(this).animate({
+
+    $("#guy").fadeIn(1000).delay(6000).fadeOut(1000);
+
+    
+
+    $(this).delay(1000).animate({
             
-              left: left,
+            left: width-300,
 
-              opacity: 1,
-              
+            opacity: 1,
+            
 
-          }, 3000, );
+        }, 3000, function(){
+            $("#guy").css("transform", "rotateY(180deg)")
+        } ).animate({
+            
+            left: 0,
 
+            opacity: 1
+        }, 3000);
+
+          
          
 
   });
@@ -56,6 +69,8 @@ opacity:0;
 
 top :100;
     }
+    
+    
 
 
 </style>

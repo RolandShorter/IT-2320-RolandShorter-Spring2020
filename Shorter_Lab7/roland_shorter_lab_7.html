@@ -7,46 +7,71 @@
 	<style>
 		li {display: inline;}
 	</style>
-	<script>
-		var $ = function(id) {
-    return document.getElementById(id);
-}
-window.onload = function() {
-  var listNode = $("images");
-  
-
-  var imageLinks = listNode.getElementsByTagName("a");
-}
-
+<script>
+	var $ = function(id) { return document.getElementById(id); }
+	var imageLinks, counter, timer, countdownTimer;
+	var imageCounter;
+	
+    window.onload = function() {
+	  counter = $("timerVal").value;
+	  var listNode = $("images");
+	  imageLinks = listNode.getElementsByTagName("a");
+	  
+		// preload images for speed
+		var i, image;
+		for ( i = 0; i < imageLinks.length; i++ ) {
+			image = new Image();
+			image.src = imageLinks[i];
+		}
+		
+		imageCounter = 0;
+		countdownTimer = setInterval(countdown, 1000);      // counts off each second for display
+		timer = setInterval(changePicture, (counter * 1000));  // counts off when to change image
+		$("timerVal").onchange = timerChange;               // if they change number in input box
+    }
+	function timerChange() {
+		clearInterval(timer);
+		counter = $("timerVal").value;
+		clearInterval(countdownTimer);
+		countdownTimer = setInterval(countdown, 1000);
+		$("timerCount").innerHTML = counter;
+		timer = setInterval(changePicture, (counter * 1000));
+	}
+	function countdown() {
+	   counter--;
+	   $("timerCount").innerHTML = counter;
+	}
+	
   function changePicture() {
-      console.log("changePicture")
-  }
+      console.log("changePicture");
+	  var activeImage = $("img");
+	  counter = $("timerVal").value;
+		imageCounter = (imageCounter + 1) % imageLinks.length;  // counts 0 to length of array
+		console.log(imageCounter);
+		activeImage.src = imageLinks[imageCounter];
+   }
+  
   //$("changePicture").addEventListener("click", changePicture, false)
 
-$("timerVal").onclick = changePicture
+//$("timerVal").onclick = changePicture
 
-var i, image, listNode, link;
-for  ( i = 0;  i < imageLinks.length; i++) {
-  var timeOut = setTimeout(swapPictures, 1000)
+//var i, image, listNode, link;
+//for  ( i = 0;  i < imageLinks.length; i++) {
+//  var timeOut = setTimeout(swapPictures, 1000)
   
 //count down timerCount
 //get value from the input
 //at end of delay swap pictures
 //
-}
 
-function swapPictures() {
-
-}
-
-	</script>
-
+</script>
 </head>
 <body>
 	<h2>Roland Shorter - IT 2320 - Lab 7</h2>
 
 	<p><center>
-	   Timer (seconds): </button><input type="text" id="timerVal" value="5" onchange=""><br/><br/>
+	   <img src="images/adams.jpg" id="img"><br/>
+	   Timer (seconds): <input type="text" id="timerVal" value="5"><br/><br/>
 	   <ul id="images">
 		   <Li><a href="images/adams.jpg" title="Adams"></a></Li>
 		   <Li><a href="images/jackson.jpg" title="Jackson"></a></Li>

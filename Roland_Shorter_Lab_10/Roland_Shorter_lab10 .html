@@ -1,26 +1,35 @@
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 $(document).ready(function() {
+$("#useShipAddress").change(function() {
+	if(this.checked) {
+		$("#billAddress").val($("#shipAddress").val()).prop("disabled", true);
+		$("#billCity").val($("#shipCity").val()).prop("disabled", true);
+		$("#billState").val($("#shipState").val()).prop("disabled", true);
+		$("#billZip").val($("#shipZip").val()).prop("disabled", true);
+	} else {
+		$("#billAddress").prop("disabled", false);
+		$("#billCity").prop("disabled", false);
+		$("#billState").prop("disabled", false);
+		$("#billZip").prop("disabled", false);
+	}
+})
+$("#fullname").blur(function(){
+	var letters = $("#fullname").val();
+	var upperCase = letters.toUpperCase();
+	$("#fullname").val(upperCase);
+})	
 
-	$("#fullname").focus();
-	
-	$("lab10Form").submit(
-		function(event) {
-			var isValid = true;
+/*$("#comment").change(function()
+{
+	var commentChar = this.val().length();
+	var charLeft = 250 - commentChar;
+	$("#msgArea").text(charLeft.toString() + " characters<br/>remaining");
+})*/
 
-			var fullName = $("#fullname").val().trim();
-			if (fullName == "") {
-				$("#fullname").next().text("This is required.");
-				isValid = false;
-			} else {
-				$("#fullname").next().text.("");
-			}
-			$("#fullname").vl.(fullName);
-		}
-	)
-
-}
+})
     
 </script>
 <style>

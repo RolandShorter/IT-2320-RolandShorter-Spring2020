@@ -22,12 +22,12 @@ $("#fullname").blur(function(){
 	$("#fullname").val(upperCase);
 })	
 
-/*$("#comment").change(function()
+$("#comment").keyup(function()
 {
-	var commentChar = this.val().length();
+	var commentChar = $("#comment").val().length;
 	var charLeft = 250 - commentChar;
-	$("#msgArea").text(charLeft.toString() + " characters<br/>remaining");
-})*/
+	$("#msgArea").html(charLeft + " characters<br/>remaining");
+})
 
 })
     

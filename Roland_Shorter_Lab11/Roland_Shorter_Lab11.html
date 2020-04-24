@@ -2,11 +2,14 @@
 <head>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
-function totalWords(){
+	$(document).ready(function (){
+		function totalWords(){
 	$("submit").click(function(){
-		var words = $.trim()$("textarea".val());
+		var words = $.trim()($("textarea".val()).split(" ");
 	})
-}
+      }
+	   })
+
 </script>
 <style>
   table { border-collapse: separate;

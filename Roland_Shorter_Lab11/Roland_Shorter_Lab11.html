@@ -1,16 +1,31 @@
 <html>
 <head>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script>
-	$(document).ready(function (){
-		function totalWords(){
-	$("submit").click(function(){
-		var words = $.trim()($("textarea".val()).split(" ");
-	})
-      }
-	   })
+    
+	<script type="text/javascript">
+ $(document).ready(function (){
+	 $("#submit").click(function(e){
+			 e.preventDefault();
 
+				 var words = $("#textArea").val().trim()
+				 var numTotal = words.split(" ").length;
+				 $("#numWords").text(numTotal.toString());
+				 
+				 var selectedChar = $("#searchChar").children("option:selected").val();
+				 var capWords = words.toUpperCase()
+				 var capLetters = capWords.split("")
+				 var numMatchChar = capLetters.filter(function(letter) {
+					 return letter === selectedChar
+
+				 }).length;
+				 $("#numberOcurrances").text(numMatchChar.toString())
+				 $ ("#enterText").text(capWords.toString())
+				 $ ("#")
+	 })
+
+ })
 </script>
+
 <style>
   table { border-collapse: separate;
           border-spacing: 15px;      }
@@ -61,15 +76,15 @@
 	</tr>
     <tr>
 	    <td>Number of words entered:</td>
-	    <td> <input type="number" id="numWords"> </td>
+	    <td id="numWords"></td>
 	</tr>
 	<tr>
 	    <td>Number of occurances of the search character:</td>
-        <td> <input type="number" id="numOccurances"> </td>
+        <td id="numberOcurrances"> </td>
 	</tr>
     <tr>
 	    <td>Display the entered text in <strong>ALL CAPS</strong>:</td>
-	    <td> <input type="text" id="enterText"> </td>
+	    <td id= "enterText"></td>
     <tr>
 	    <td>Display the entered text with the search character <strong>removed</strong>:</td>
 	    <td> <input type="text" id="textSearch"> </td>>

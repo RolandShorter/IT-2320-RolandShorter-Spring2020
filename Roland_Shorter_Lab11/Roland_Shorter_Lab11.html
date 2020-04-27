@@ -17,13 +17,37 @@
 				 var numMatchChar = capLetters.filter(function(letter) {
 					 return letter === selectedChar
 				 }).length;
-				 var removeChar = words.replace(selectedChar, "")
-				 removeChar = removeChar.replaceAll(selectedChar.toLowerCase(), "")
+				 //var removeChar = words.replace(selectedChar, "")
+				 //removeChar = removeChar.replace(selectedChar.toLowerCase(), "")
+				 var removeChar = words.split("").filter(function(letter){
+					 if (letter === selectedChar ) {
+						 return false;
+						 
+					 }
+					 if (letter === selectedChar.toLowerCase()){
+						 return false
+					 }
+					 return true
+				 }).join("")
 				 $("#numberOcurrances").text(numMatchChar.toString())
 				 $ ("#enterText").text(capWords)
 				 $ ("#textSearch").text(removeChar)
-	 })
+				 var dateInput = $("#numDays").val()
+				 var todayDate = new Date();
+                 todayDate.setDate(todayDate.getDate()+parseInt(dateInput))
+                 var year = todayDate.getFullYear()
+                 var month = todayDate.getMonth()+1;
+                 var day = todayDate.getDate()
+                 var dateString = month.toString().padStart(2,"0") + "/" + day.toString().padStart(2,"0") + "/" + year.toString();
+                 $("#addDays").text(dateString)
 
+				 console.log(dateInput)
+				 console.log (dateString)
+
+
+				 
+	 })
+	
  })
 </script>
 
@@ -73,7 +97,7 @@
 		<td><textarea id="textArea" cols="40" rows="15"></textarea></td>
 	</tr>
 	<tr>
-	    <td>Date Modifier - Number of Days:</td><td><input type="date" id="numDays" ></td>
+	    <td>Date Modifier - Number of Days:</td><td><input type="number" id="numDays" ></td>
 	</tr>
     <tr>
 	    <td>Number of words entered:</td>
@@ -92,7 +116,7 @@
 	</tr>
     <tr>
 	    <td>Add the number of days in Date Modifier to the current date<br/>Display the resulting date as MM/DD/YYYY:</td>
-	    <td> <input type="number" id="addDays"> </td>
+	    <td id="addDays"> </td>
 	</tr>
 	<tr>
 		   <td><input type="reset" id="reset" name="reset" value="Reset"></td>

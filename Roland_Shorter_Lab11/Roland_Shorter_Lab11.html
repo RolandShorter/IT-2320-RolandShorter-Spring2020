@@ -16,11 +16,12 @@
 				 var capLetters = capWords.split("")
 				 var numMatchChar = capLetters.filter(function(letter) {
 					 return letter === selectedChar
-
 				 }).length;
+				 var removeChar = words.replace(selectedChar, "")
+				 removeChar = removeChar.replaceAll(selectedChar.toLowerCase(), "")
 				 $("#numberOcurrances").text(numMatchChar.toString())
-				 $ ("#enterText").text(capWords.toString())
-				 $ ("#")
+				 $ ("#enterText").text(capWords)
+				 $ ("#textSearch").text(removeChar)
 	 })
 
  })
@@ -72,7 +73,7 @@
 		<td><textarea id="textArea" cols="40" rows="15"></textarea></td>
 	</tr>
 	<tr>
-	    <td>Date Modifier - Number of Days:</td><td><input type="number" id="numDays" ></td>
+	    <td>Date Modifier - Number of Days:</td><td><input type="date" id="numDays" ></td>
 	</tr>
     <tr>
 	    <td>Number of words entered:</td>
@@ -87,7 +88,7 @@
 	    <td id= "enterText"></td>
     <tr>
 	    <td>Display the entered text with the search character <strong>removed</strong>:</td>
-	    <td> <input type="text" id="textSearch"> </td>>
+	    <td id="textSearch"> </td>
 	</tr>
     <tr>
 	    <td>Add the number of days in Date Modifier to the current date<br/>Display the resulting date as MM/DD/YYYY:</td>

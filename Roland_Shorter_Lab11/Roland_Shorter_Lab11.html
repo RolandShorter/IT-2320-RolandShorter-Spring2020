@@ -4,6 +4,9 @@
     
 	<script type="text/javascript">
  $(document).ready(function (){
+	 /*$("#reset").click(function() {
+		 $("#div").empty();
+	 });*/
 	 $("#submit").click(function(e){
 			 e.preventDefault();
 
@@ -99,9 +102,10 @@
 	<tr>
 	    <td>Date Modifier - Number of Days:</td><td><input type="number" id="numDays" ></td>
 	</tr>
+	<!--<div>-->
     <tr>
 	    <td>Number of words entered:</td>
-	    <td id="numWords"></td>
+	    <td input type="text"id="numWords"></td>
 	</tr>
 	<tr>
 	    <td>Number of occurances of the search character:</td>
@@ -118,6 +122,7 @@
 	    <td>Add the number of days in Date Modifier to the current date<br/>Display the resulting date as MM/DD/YYYY:</td>
 	    <td id="addDays"> </td>
 	</tr>
+	<!--</div>-->
 	<tr>
 		   <td><input type="reset" id="reset" name="reset" value="Reset"></td>
            <td><input type="submit" id="submit" name="submit" value="Submit"></td>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            
+        })
+      function  handleSubmit() {var zipCode = $('#zipCode').val();}
+        
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+</head>
+<body>
+    <h2>Roland Shorter - IT 2320 - Lab 12</h2>
+    <form action="/action_page.php">
+        <input type="text" placeholder="Search" name="search">
+        <button type="submit" >Submit</button>
+    </form>
+    <table style="width:100%">
+        <tr>
+          <td>City</td>
+          <td id="cityData"></td>
+          </tr>
+          <tr><td>Tempature</td>
+            <td id="cityTemp"></td></tr>
+         <tr> <td>Wind Speed and Direction</td>
+          <td id="windSpeed"></td></tr>
+          <tr><td>Humidity</td><td id="cityHumidty"></td></tr>
+          <tr> <td>Temp min</td>
+            <td id=" tempMin"></td></tr>
+            <tr> <td>Temp Max</td>
+                <td id="tempMax"></td></tr>
+        </table>
+
+</body>
+</html>

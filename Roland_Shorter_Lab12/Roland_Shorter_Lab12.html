@@ -7,8 +7,35 @@
         $(document).ready(function() {
             
         })
-      function  handleSubmit() {var zipCode = $('#zipCode').val();}
-        
+      function  handleSubmit() {var zipCode = $('#zipCode').val();
+      var url = "http://api.openweathermap.org/data/2.5/weather?zip="+zipCode+",us&appid=5c56b9e265d2b98cae40826d5fad2620&parameter=value"; 
+         $.ajax({
+       method: "GET",
+       url: url,
+       dataType: "json",
+       success: function(data){
+         console.log(data)
+         assignValues(data)
+       },
+       error: function(req,err,abc) {
+         console.log(err)
+         console.log(abc)
+       }
+    })
+      console.log("working")}
+      function assignValues(data)  {
+        var tempKelvin = data.main.temp
+        var tempFarh = tempKelvin*(9/5)-459.67
+        var tempN =data.main.temp_min
+        var tempFarhN = tempKelvin*(9/5)-459.67
+        $("#cityData").html(data.name)
+        $("#cityTemp").html(tempFarh.toString())
+        $("#windSpeed").html(data.wind.speed)
+        $("#cityHumidty").html(data.main.humidity)
+        $("#tempMin"),html(tempFarhN.toString())
+        $("#tempMax").html(data.main.temp_max.toString())
+
+      }
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +44,10 @@
 </head>
 <body>
     <h2>Roland Shorter - IT 2320 - Lab 12</h2>
-    <form action="/action_page.php">
-        <input type="text" placeholder="Search" name="search">
-        <button type="submit" >Submit</button>
-    </form>
+
+        <input  id ="zipCode" type="text" placeholder="Search" name="search">
+        <button onclick="handleSubmit()">Submit</button>
+   
     <table style="width:100%">
         <tr>
           <td>City</td>

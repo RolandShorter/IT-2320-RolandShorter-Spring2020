@@ -26,14 +26,14 @@
       function assignValues(data)  {
         var tempKelvin = data.main.temp
         var tempFarh = tempKelvin*(9/5)-459.67
-        var tempN =data.main.temp_min
-        var tempFarhN = tempKelvin*(9/5)-459.67
+       // var tempN =data.main.temp_min
+        //var tempFarhN = tempN*(9/5)-459.67
         $("#cityData").html(data.name)
         $("#cityTemp").html(tempFarh.toString())
         $("#windSpeed").html(data.wind.speed)
         $("#cityHumidty").html(data.main.humidity)
-        $("#tempMin"),html(tempFarhN.toString())
-        $("#tempMax").html(data.main.temp_max.toString())
+        $("#tempMin").html(data.main.temp_min)
+        $("#tempMax").html(data.main.temp_max)
 
       }
     </script>

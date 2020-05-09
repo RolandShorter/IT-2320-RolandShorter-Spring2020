@@ -17,23 +17,25 @@
          console.log(data)
          assignValues(data)
        },
-       error: function(req,err,abc) {
-         console.log(err)
-         console.log(abc)
-       }
+      // error: function(req,err,abc) {
+        //console.log(err)
+        // console.log(abc)
+      // }
     })
       console.log("working")}
       function assignValues(data)  {
         var tempKelvin = data.main.temp
         var tempFarh = tempKelvin*(9/5)-459.67
-       // var tempN =data.main.temp_min
-        //var tempFarhN = tempN*(9/5)-459.67
+        var tempX =data.main.temp_max
+        var tempFarhX = tempX*(9/5)-459.67
+        var tempN =data.main.temp_min
+        var tempFarhN = tempN*(9/5)-459.67
         $("#cityData").html(data.name)
         $("#cityTemp").html(tempFarh.toString())
         $("#windSpeed").html(data.wind.speed)
         $("#cityHumidty").html(data.main.humidity)
-        $("#tempMin").html(data.main.temp_min)
-        $("#tempMax").html(data.main.temp_max)
+        $("#tempMin").html(tempFarhN.toString())
+        $("#tempMax").html(tempFarhX.toString())
 
       }
     </script>
@@ -58,9 +60,9 @@
          <tr> <td>Wind Speed and Direction</td>
           <td id="windSpeed"></td></tr>
           <tr><td>Humidity</td><td id="cityHumidty"></td></tr>
-          <tr> <td>Temp min</td>
-            <td id=" tempMin"></td></tr>
-            <tr> <td>Temp Max</td>
+          <tr> <td>Tempature Low</td>
+            <td id="tempMin"></td></tr>
+            <tr> <td>Tempature High</td>
                 <td id="tempMax"></td></tr>
         </table>
 
